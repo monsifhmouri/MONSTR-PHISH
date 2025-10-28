@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rewards Redemption Site</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      margin: auto;
+      background: url('hayato.jpg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      margin-top: 40%;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+      font-size: 45px;
+    }
+    p.sub {
+      text-align: center;
+      color: #f0f0f0;
+      text-shadow: 1px 1px 2px black;
+      margin-top: 0;
+      font-size: 20px;
+    }
+    input[type="text"] {
+      width: 95%;
+      padding: 15px;
+      margin: 10px auto;
+      display: block;
+      box-sizing: border-box;
+      background: white;
+      border: 2px solid yellow;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+    button {
+      padding: 12px 24px;
+      background: #5c5c5c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+    .notice {
+      text-align: left;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px auto;
+      width: 95%;
+      box-sizing: border-box;
+      max-width: 600px;
+      color: black;
+    }
+    .notice strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .footer {
+      background: black;
+      color: white;
+      font-size: 15.6px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h2>Rewards Redemption Site</h2>
+      <p class="sub">Redeem your code</p>
+      <input type="text" id="code" placeholder="Enter your redeem code">
+      <button onclick="redeem()">Confirm</button>
+
+      <div class="notice">
+        <strong>Important Notice:</strong>
+        1. Redemption code has 12/16 characters, consisting of capital letters and numbers.<br>
+        2. Item rewards are shown in [vault] tab in game lobby; Golds or diamonds will add in account wallet automatically.<br>
+        3. Please note redemption expiration date. Any expired codes cannot be redeemed.<br>
+        4. Please contact customer service if you encountered any issue.<br>
+        5. Reminder: you will not be able to redeem your rewards with guest accounts. You may bind your account to Facebook or VK in order to receive the rewards.
+      </div>
+    </div>
+    <div class="footer">
+      Copyright © Garena International.<br>
+      Trademarks belong to their respective owners. All rights Reserved.
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    function redeem() {
+      var code = document.getElementById("code").value;
+      var modal = document.getElementById("myModal");
+      var modalText = document.getElementById("modalText");
+
+      if (code.length >= 12) {
+        modalText.innerText = "Thanks for redeeming. In 24 hours your FF magic cube will be sent to your mail. You have to claim. Thanks.";
+      } else {
+        modalText.innerText = "Please enter a valid code (12/16 characters).";
+      }
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

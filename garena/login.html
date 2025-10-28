@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garena Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #e53935;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #eee;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #007BFF;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            text-align: center;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="garena-logo.svg" alt="Garena Logo">
+        </div>
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Username Garena / E-Mail / Nomor Handphone" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <div class="links">
+                <a href="#">Lupa Password</a>
+            </div>
+            <button type="submit" class="login-btn">Login Sekarang</button>
+            <button type="button" class="signup-btn">Daftar Akun Baru</button>
+        </form>
+        <div class="footer">
+            <a href="#">Ketentuan Penggunaan</a> dan 
+            <a href="#">Kebijakan Privasi</a>
+        </div>
+    </div>
+</body>
+</html>
