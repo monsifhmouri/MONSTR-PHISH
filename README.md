@@ -26,7 +26,7 @@ A simple phishing framework with ready-to-use templates for various platforms. B
 ## Installation
 1. Clone the repo:
    ```
-   git clone https://github.com/yourusername/MONSTR-PHISH.git
+   git clone https://github.com/monsifhmouri/MONSTR-PHISH.git
    ```
 2. Navigate to the directory:
    ```
